@@ -1,0 +1,12 @@
+FROM mysql
+
+EXPOSE 80
+
+COPY /banco.sql /docker-entrypoint-initdb.d
+
+VOLUME ["/var/lib/mysql"]
+
+ENV MYSQL_ROOT_PASSWORD="@1234"
+ENV MYSQL_DATABASE="app-database"
+ENV MYSQL_USER="user1"
+ENV MYSQL_PASSWORD="1234"
